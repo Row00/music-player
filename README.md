@@ -1,6 +1,6 @@
 
-<h1 align="center">RapFM 🎧</h1>
-<p>RapFM , Music App with Java Script. This music player is designed with CSS & JavaScript.</p>
+<h1 align="center">Music Player🎧</h1>
+<p>Music App with Java Script. This music player is designed with CSS & JavaScript.</p>
 <p>If you like this project, follow and give me ⭐ </p>
 <hr>
 <div align="center">
@@ -13,17 +13,14 @@
 
 <div align="center">
   <h2>💻 Desktop Screenshot : </h2>
-  <img src="https://raw.githubusercontent.com/Mhyar-nsi/RapFM/main/Screenshot.png">
+  <img src="./screenshot/desktop.png">
 </div>
 <br>
 
 <div align="center">
   <h2>📱 Mobile Screenshot : </h2> 
-  <img src="https://raw.githubusercontent.com/Mhyar-nsi/RapFM/main/Mobile-Screenshot.jpg" width="400px">
+  <img src="./screenshot/mobile.jpg" width="400px">
 </div>
 
 <hr>
-<div align="center">
-  <p>Made with 💜</p>
-</div>
     
