@@ -1,105 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#8425e0">
-    <title>Metro Boomin (Feat. Don Toliver & Future) - Too Many Nights</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/icon/css/icon.css">
+    <title>Notepad - Untitled</title>
+    <link rel="stylesheet" href="assets/css/notepad-style.css">
 </head>
 <body>
-    <div class="pre-loader"></div>
-    <div class="content">
-        <button class="github">View On GitHub</button>
-        <div class="desk-bar">
-            <div class="desk-menu">
-                <div class="tool">
-                    <i class="fi fi-rr-user"></i>
-                    <i class="fi fi-rr-search"></i>
-                </div>
-                <div class="hr"></div>
-                <div class="desk-icons">
-                    <i class="fi fi-rr-home"></i>
-                    <i class="fi fi-sr-download"></i>
-                    <i class="fi fi-rr-music-alt"></i>
-                    <i class="fi fi-rr-paper-plane"></i>
-                </div>
+    <div class="notepad-window">
+        <!-- Title Bar -->
+        <div class="title-bar">
+            <div class="title">Notepad - Untitled</div>
+            <div class="window-controls">
+                <div class="control-btn">_</div>
+                <div class="control-btn">□</div>
+                <div class="control-btn close">×</div>
             </div>
         </div>
-        <div class="container flex">
-            <div>
-                <div class="album">
-                    <i class="fi fi-ss-angle-small-left font-size-19"></i>
-                    <h2 class="album-name font-size-md">Heros & Villains</h2>
-                </div>
-                <div class="img">
-                    <img src="assets/images/Heros & Villains.jpg" alt="" class="img-size img-style cover">
-                </div>
-            </div>
-            <div class="music-control">
-                <div class="song-info">
-                    <h2 class="font-size-lg artist">Metro Boomin</h2>
-                    <p class="font-size-md color-grey">(Feat. Don Toliver & Future)</p>
-                    <p class="font-size-md color-grey track">Too Many Nights</p>
-                </div>
-                <div class="song-progress">
-                    <div class="range">
-                        <input class="progress" type="range" min="1" max="100" value="1">
-                        <div class="time">
-                            <p class="time-current color-grey">00:00</p>
-                            <p class="time-duration color-grey"></p>
-                        </div>
+
+        <!-- Menu Bar -->
+        <div class="menu-bar">
+            <span class="menu-item">File</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Help</span>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Main Notepad Text Area -->
+            <textarea id="notepadText" class="notepad-text" placeholder="Start typing your notes here..."></textarea>
+            
+            <!-- Hidden Music Controls -->
+            <div id="musicControls" class="music-controls hidden">
+                <div class="music-header">🎵 Music Player</div>
+                
+                <!-- Track Info Display -->
+                <div class="music-info">
+                    <div class="album-art">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjBmMGYwIi8+CjxwYXRoIGQ9Ik0yMCAzMEMxNS41ODE3IDMwIDEyIDI2LjQxODMgMTIgMjJDMTIgMTcuNTgxNyAxNS41ODE3IDE0IDIwIDE0QzI0LjQxODMgMTQgMjggMTcuNTgxNyAyOCAyMkMyOCAyNi40MTgzIDI0LjQxODMgMzAgMjAgMzBaIiBmaWxsPSIjY2NjIi8+Cjwvc3ZnPgo=" alt="Album Art">
+                    </div>
+                    <div class="track-details">
+                        <div id="trackTitle" class="track-title">No Track Loaded</div>
+                        <div id="trackArtist" class="track-artist">Unknown Artist</div>
                     </div>
                 </div>
-                <div class="bar">
-                    <audio class="music" src="./assets/music/03 Too Many Nights (feat. Don Toliver & Future).mp3"></audio>
-                    <i class="fi mode-toggel color-grey fi-rr-shuffle"></i>
-                    <i class="fi fi-sr-time-forward-ten back change color-grey"></i>
-                    <i class="fi play-music fi-sr-play"></i>
-                    <i class="fi fi-sr-time-forward-ten next color-grey"></i>
-                    <i class="fi heart color-grey fi-rr-heart"></i>
+
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+                        <span id="totalTime">0:00</span>
+                    </div>
                 </div>
-                <div class="lyric">
-                    <h3 class="lyric-content">. . .</h3>
+
+                <!-- Control Buttons -->
+                <div class="controls">
+                    <button id="prevBtn" class="control-button">⏮</button>
+                    <button id="playBtn" class="control-button play-btn">▶</button>
+                    <button id="nextBtn" class="control-button">⏭</button>
+                    <button id="shuffleBtn" class="control-button">🔀</button>
+                    <button id="repeatBtn" class="control-button">🔁</button>
+                </div>
+
+                <!-- Volume Section -->
+                <div class="volume-section">
+                    <span>🔊</span>
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50">
+                    <span id="volumeValue">50%</span>
+                </div>
+
+                <!-- Playlist Section -->
+                <div class="playlist-section">
+                    <div class="playlist-header">
+                        <span>Playlist</span>
+                        <span id="playlistCount">0 tracks</span>
+                    </div>
+                    <div id="playlistContainer" class="playlist-container">
+                        <!-- Playlist items will be populated by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="mobile-bar">
-            <div>
-                <div class="line"></div>  
-            </div>
-            <div class="menue">
-                <i class="fi fi-rr-home"></i>
-                <i class="fi fi-sr-download"></i>
-                <i class="fi fi-rr-music-alt"></i>
-                <i class="fi fi-rr-paper-plane"></i>
-            </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="fileInfo">Ready</span>
+            <span id="statusText">0 words</span>
         </div>
-        <div class="mobile-footer">
-            <div class="social">
-                <a href="https://github.com/Mhyar-nsi"><i class="fi fi-brands-github"></i></a>
-                <a href="https/t.me/Mhyar_nsi"><i class="fi fi-brands-telegram"></i></a>
-                <a href="https://instagram.com/mhyar_nsi"><i class="fi fi-brands-instagram"></i></a>
-                <a href="https://twitter.com/mhyar_nsi"> <i class="fi fi-brands-twitter"></i></a>
-            </div>
-            <p>Made with 💜 By <a class="made" href="https://github.com/Mhyar-nsi" target="_blank">Mahyar</a></p>
-        </div class="mobile-footer">
-        </div>
-        <footer>
-            <div class="social">
-                <a href="https://github.com/Mhyar-nsi"><i class="fi fi-brands-github"></i></a>
-                <a href="https/t.me/Mhyar_nsi"><i class="fi fi-brands-telegram"></i></a>
-                <a href="https://instagram.com/mhyar_nsi"><i class="fi fi-brands-instagram"></i></a>
-                <a href="https://twitter.com/mhyar_nsi"> <i class="fi fi-brands-twitter"></i></a>
-            </div>
-            <p>Made with 💜 By <a class="made" href="https://github.com/Mhyar-nsi" target="_blank">Mahyar</a></p>
-        </footer>
-    <script src="assets/js/preload.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/btn.js"></script>
-    <script src="assets/js/lyric.js"></script>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="assets/js/notepad-player.js"></script>
 </body>
 </html>
